@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>My site</title>
+      <style>
+          #result {
+              background: rgb(50, 200, 143);
+              border: 2px dotted gold;
+              font-size: 24px;
+              height: 60px;
+              margin-top: 10px;
+          }
+      </style>
+    </head>
+    <body>
+      <h1>Psy domowe</h1>
+      <p>Udomowiony gatunek ssaka drapieżnego z rodziny psowatych (Canidae), traktowany przez niektóre ujęcia systematyczne za podgatunek wilka,
+        a przez inne za odrębny gatunek, opisywany pod synonimicznymi nazwami Canis lupus familiaris lub Canis familiaris. Od czasu jego udomowienia
+        powstało wiele ras, znacznie różniących się morfologią i cechami użytkowymi. Rasy pierwotne powstawały głównie w wyniku presji środowiskowej.
+        Rasy współczesne uzyskano w wyniku doboru sztucznego.</p>
+      <img id="dogs" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Collage_of_Nine_Dogs.jpg/1024px-Collage_of_Nine_Dogs.jpg">
+      <h2>Quiz o psach</h2>
+        <form id="quiz-form">
+            <label>
+                Która z podanych ras psów jest rozmiarowo najmniejsza?<br>
+                <select id="quiz-answer">
+                    <option value="shihtzu">Shih Tzu</option>
+                    <option value="shiba">Shiba</option>
+                    <option value="shepherd">German Shepherd</option>
+                </select>
+            </label> <br>
+            <button type="submit">Sprawdź</button>
+        </form>
+        <div id="result"></div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script>
+          $("#quiz-form").on("submit", function() {
+            event.preventDefault();
+            var $answer = $("#quiz-answer");
+            var answer = $answer.val();
+            if (answer === "shihtzu") {
+                $("#result").text("Zgadza się!");
+            }
+            else {
+                $("#result").text("Spróbuj ponownie");
+            }
+          });
+      </script>
+    </body>
+</html>
